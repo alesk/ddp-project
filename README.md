@@ -17,4 +17,4 @@ to the root of the project. Then issue:
 
 
 [1]: https://alesk.shinyapps.io/developing-data-products-project/
-[2]: xxxx
+[2]: https://alesk.github.io/ddp-project/index.html
