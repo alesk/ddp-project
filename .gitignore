@@ -1,1 +1,10 @@
 shinyapps/*
+.Rproj.user
+*.html
+index.md
+assets/*
+libraries/*
+.cache
+.Rhistory
+*.Rproj
+*.swp

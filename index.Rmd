@@ -1,0 +1,66 @@
+---
+title       : Normal distirbution
+subtitle    : Simple App with Shiny
+author      : Aleš Kotnik
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Short desription of application
+
+The [application](https://alesk.shinyapps.io/developing-data-products-project/) displays
+the area under the normal curve given the mean and standard deviation of the curve and the cut-off value. 
+
+```{r, echo=FALSE}
+  x <- seq(75-50, 75+50, length=300)
+  plot(x,dnorm(x, 75, 10), type="l", lwd=3)
+
+  x1 <- seq(80, 105, length=300)
+  polygon(c(80, x1), c(0, dnorm(x1, 75, 10)), col="skyblue") 
+```
+
+--- .class #id 
+
+## Example usage
+
+Suppose there is a test where results are normaly distributed with mean score 75 and standard deviation of 10 points.
+
+You scored 80 points and you want to konw what percentage of students scored as high or higher than you.
+
+---
+
+## Calculate the value of your score
+
+```{r}
+mean <- 75
+sdev <- 10
+yourScore <- 85
+
+betterThanYou <- pnorm(yourScore, mean, sdev)
+
+``` 
+
+`r sprintf("%.2f%%", betterThanYou*100)` scored the same or better than you.
+
+---
+
+## Modify parameters
+
+You can modify: 
+
+  - mean, 
+  - standard devitaion,
+  - how many standard deviations around the mean to display and
+  - the value above which to shade the area
+  
+[Try it yourself!](https://alesk.shinyapps.io/developing-data-products-project/)
+
+
+
+
+
